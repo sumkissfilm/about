@@ -343,7 +343,7 @@ body.menu-open > *:not(.navbar-collapse) {
 
 /* 關閉按鈕懸停效果 */
 .menu-close-btn:hover {
-    background: rgba(0, 0, 0, 0.1); /* 懸停時半透明背景 */
+    background: transparent; /* 懸停時半透明背景 */
     border-radius: 50%;     /* 圓形背景 */
 }
 
@@ -849,7 +849,7 @@ body.menu-open > *:not(.navbar-collapse) {
     }
     
     .menu-close-btn:hover {
-        background: rgba(0, 0, 0, 0.1); /* 懸停時才顯示背景 */
+        background: transparent; /* 懸停時才顯示背景 */
         transform: scale(1.1); /* 懸停時放大 */
     }
     
