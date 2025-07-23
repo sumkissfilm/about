@@ -291,8 +291,33 @@ header.scrolled .navbar-toggler .icon-bar {
 /* 選單開啟時防止背景滾動 */
 body.menu-open {
     overflow: hidden;        /* 隱藏滾動條 */
-    position: fixed;         /* 固定定位 */
-    width: 100%;            /* 全寬 */
+    /* 移除 position: fixed 避免灰色背景 */
+    /* position: fixed; */
+    /* width: 100%; */
+}
+
+/* 確保選單開啟時沒有灰色背景 */
+body.menu-open::before,
+body.menu-open::after {
+    display: none !important;
+}
+
+/* 防止Bootstrap或其他框架添加灰色背景 */
+body.menu-open {
+    background: transparent !important;
+}
+
+/* 確保選單容器本身的白色背景不受影響 */
+body.menu-open .navbar-collapse.show {
+    background: #fff !important;
+    box-shadow: -4px 0 12px rgba(0,0,0,0.1) !important;
+}
+
+/* 防止任何可能的灰色背景覆蓋 */
+body.menu-open::before,
+body.menu-open::after,
+body.menu-open > *:not(.navbar-collapse) {
+    background: transparent !important;
 }
 
 /* ========================================
@@ -727,6 +752,18 @@ body.menu-open {
         padding: 2rem 0;     /* 調整內距 */
     }
     
+    /* 手機版選單開啟時防止灰色背景 */
+    body.menu-open {
+        background: transparent !important;
+        overflow: hidden;
+    }
+    
+    /* 確保手機版選單容器沒有灰色背景 */
+    .navbar-collapse.show {
+        background: #fff !important;
+        box-shadow: -4px 0 12px rgba(0,0,0,0.1) !important;
+    }
+    
     /* 手機版容器調整 */
     .navbar .container-fluid {
         padding: 0;          /* 無內距 */
@@ -802,7 +839,7 @@ body.menu-open {
         width: 40px;        /* 按鈕寬度 */
         height: 40px;       /* 按鈕高度 */
         border: none;       /* 移除邊框 */
-        background: rgba(0, 0, 0, 0.1); /* 半透明背景 */
+        background: transparent; /* 透明背景 */
         border-radius: 50%; /* 圓形背景 */
         cursor: pointer;    /* 滑鼠指標變為手型 */
         align-items: center; /* 垂直置中 */
@@ -812,7 +849,7 @@ body.menu-open {
     }
     
     .menu-close-btn:hover {
-        background: rgba(0, 0, 0, 0.2); /* 懸停時背景更明顯 */
+        background: rgba(0, 0, 0, 0.1); /* 懸停時才顯示背景 */
         transform: scale(1.1); /* 懸停時放大 */
     }
     
