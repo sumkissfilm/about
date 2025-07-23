@@ -657,6 +657,62 @@ body {
 
 /* ===== RESPONSIVE DESIGN ===== */
 
+/* ===== RESPONSIVE FONT SIZES FOR STORY & TEAM SECTIONS ===== */
+
+/* Large Desktop (≥1200px) */
+@media (min-width: 1200px) {
+    .story-text p,
+    .team-text p,
+    .message-content p {
+        font-size: 1.1rem; /* 17.6px */
+    }
+}
+
+/* Desktop (992px-1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .story-text p,
+    .team-text p,
+    .message-content p {
+        font-size: 1.1rem; /* 17.6px */
+    }
+}
+
+/* Tablet (768px-991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .story-text p,
+    .team-text p,
+    .message-content p {
+        font-size: 1rem; /* 16px */
+    }
+}
+
+/* Mobile Large (576px-767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .story-text p,
+    .team-text p,
+    .message-content p {
+        font-size: 0.9rem; /* 14.4px */
+    }
+}
+
+/* Mobile Small (≤575px) */
+@media (max-width: 575px) {
+    .story-text p,
+    .team-text p,
+    .message-content p {
+        font-size: 0.85rem; /* 13.6px */
+    }
+}
+
+/* Extra Small Mobile (≤399px) */
+@media (max-width: 399px) {
+    .story-text p,
+    .team-text p,
+    .message-content p {
+        font-size: 0.85rem; /* 13.6px */
+    }
+}
+
 /* Desktop Navigation (992px+) */
 @media (min-width: 992px) {
     /* About Hero Section */
